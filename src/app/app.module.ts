@@ -27,6 +27,13 @@ import { DialogComponent } from './components/ui/dialog/dialog.component';
 import { PopupLoginComponent } from './components/public-pages/popup-login/popup-login.component';
 import { WelcomeComponent } from './components/public-pages/welcome/welcome.component';
 import { UnderConstructionComponent } from './components/public-pages/under-construction/under-construction.component';
+import { UnionComponent } from './components/public-pages/union/union.component';
+import { AboutIranComponent } from './components/public-pages/about-iran/about-iran.component';
+import { PhotoGalleryComponent } from './components/public-pages/photo-gallery/photo-gallery.component';
+import { PressComponent } from './components/public-pages/press/press.component';
+import { CurrentEventsComponent } from './components/public-pages/current-events/current-events.component';
+import { ImprintComponent } from './components/public-pages/imprint/imprint.component';
+import { AboutDeveloperComponent } from './components/public-pages/about-developer/about-developer.component';
 
 
 @NgModule({
@@ -51,6 +58,13 @@ import { UnderConstructionComponent } from './components/public-pages/under-cons
     PopupLoginComponent,
     WelcomeComponent,
     UnderConstructionComponent,
+    UnionComponent,
+    AboutIranComponent,
+    PhotoGalleryComponent,
+    PressComponent,
+    CurrentEventsComponent,
+    ImprintComponent,
+    AboutDeveloperComponent,
   ],
   entryComponents: [
     DialogComponent,

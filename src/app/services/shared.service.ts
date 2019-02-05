@@ -38,15 +38,28 @@ export class SharedService {
   }
 
   static initialize() {
+    SharedService.navbarMenuItems = new Array<MenuItem>(
+      new MenuItem('Home', '/', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Home page'),
+      new MenuItem('The Union', '/union', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'The Union'),
+      new MenuItem('About Iran', '/about-iran', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'About Iran'),
+      new MenuItem('Photo Gallery', '/photo-gallery', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Photo gallery'),
+      new MenuItem('Press', '/press', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Our community in the press'),
+      new MenuItem('Current Events', '/current-events', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Current events'),
+      new MenuItem('Imprint', '/imprint', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Imprint'),
+      new MenuItem('About Developer', '/about-developer', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'About developer'),
+    );
+
     SharedService.subToolBarInfo = new Array<SubToolbarItem>(
-      new SubToolbarItem('/', 'Welcome to my personal website!', 'Ramin Armanfar'),
-      new SubToolbarItem('/public/projects', 'Projects', 'List of my programming projects.'),
-      new SubToolbarItem('/public/goals', 'Goals', 'My goals and vision.'),
-      new SubToolbarItem('/public/about-me', 'About me', 'Briefly about me.'),
-      new SubToolbarItem('/public/contact-me', 'Contact me', 'Ways you can contact me.'),
-      new SubToolbarItem('/public/login', 'Login', 'Enter your credential to access your personal page.'),
-      new SubToolbarItem('/public/register-user', 'Register', 'Register a new user.'),
-      new SubToolbarItem('/public/forget-passowrd', 'Password Recovery', 'Recover your password if you don\'t remember it.'),
+      new SubToolbarItem('/', 'Welcome to Iran and Germany community!', 'Passau City'),
+      new SubToolbarItem('/union', 'The Community', 'Our community in the Passau.'),
+      new SubToolbarItem('/about-iran', 'About Iran', 'Brief information about Iranian history and culture.'),
+      new SubToolbarItem('/photo-gallery', 'Photo Gallery', 'Photos of events and celebrations.'),
+      new SubToolbarItem('/press', 'Press and news', 'Our Community in the Press and news.'),
+      new SubToolbarItem('/current-events', 'Current Events', 'List of oncomming and current events.'),
+      new SubToolbarItem('/imprint', 'Imprint', 'The Imprint.'),
+      new SubToolbarItem('/about-developer', 'About Developer', 'Contact developer.'),
+
+      /*
       new SubToolbarItem('/dashboard', 'Dashboard', 'Your personal dashboard'),
       new SubToolbarItem('/dashboard/user-details/' + DataOperation.UpdateLoggedUser,
         'Update your personal data', 'Your information list to be updated.'),
@@ -61,18 +74,11 @@ export class SharedService {
       new SubToolbarItem('/dashboard/add-update-user/add', 'Add new user', 'Fill in the form to add new user.'),
       new SubToolbarItem('/dashboard/add-update-user/update', 'Update selected user information', 'Modify user information.'),
       new SubToolbarItem('**', 'The page is under construction.', 'Thanks for your patient.')
+      */
     );
   }
 
-  constructor(private dialog: MatDialog, private http: HttpClient) {
-    this.getMenuList().then(menuList => SharedService.navbarMenuItems = menuList);
-  }
-
-  getMenuList(): Promise<Array<MenuItem>> {
-    return new Promise((resolve: any) => this.http.get('/api/menus/').subscribe((result: ServiceResponse) => {
-      resolve(result.data);
-    }));
-  }
+  constructor(private dialog: MatDialog, private http: HttpClient) { }
 
   openDialog(width: number, dialogData: DialogData): Promise<any> {
     return new Promise((resolve: any) => {
