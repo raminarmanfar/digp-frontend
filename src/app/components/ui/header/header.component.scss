@@ -1,0 +1,53 @@
+mat-toolbar {
+    height: 56px;
+    padding: 0 5px 0;
+    margin: 0;
+}
+
+#imgDiv {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.mat-toolbar.mat-primary {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+mat-toolbar-row {
+    margin: 0;
+}
+
+.toolbar-image {
+    height: 47px;
+    padding-top: 4px;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.btn-text {
+    font-size: large;
+    padding: 5px 15px 5px 15px;
+}
+
+.menu-item-text {
+    padding-left: 15px;
+}
+
+#profile-image {
+    //max-height: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+#profile-info-container {
+    padding-left: 10px;
+    border: 1 px solid blue;
+    cursor: default;
+}
