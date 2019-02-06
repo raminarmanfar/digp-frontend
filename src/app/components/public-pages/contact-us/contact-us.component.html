@@ -1,0 +1,53 @@
+<form #frm="ngForm" (ngSubmit)="submit(frm.value)">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Contact Us</mat-card-title>
+      <mat-card-subtitle>Iran germany community in Passau city</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/images/iran-germany-9.jpg" alt="iran-germany">
+    <mat-card-content>
+      <h3>Please fill in the following form to contact us</h3>
+      <mat-form-field>
+        <input type="text" matInput placeholder="First Name" ngModel name="firstName" required #firstName="ngModel">
+        <mat-error *ngIf="firstName.hasError('required')">
+          First name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input">
+        <input type="text" matInput placeholder="Last Name" ngModel name="lastName" required #lastName="ngModel">
+        <mat-error *ngIf="lastName.hasError('required')">
+          Last name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input">
+        <input matInput placeholder="Email" ngModel name="email" required #email="ngModel">
+        <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input">
+        <textarea matInput placeholder="Subject" ngModel name="subject" required #subject="ngModel"></textarea>
+        <mat-error *ngIf="subject.hasError('required')">
+          Subject is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-divider style="margin-top: 20px;"></mat-divider>
+      <div class="contact-items">
+        <h3>You can alternatively email us using the following email address.</h3>
+        <a href="mailto:admin@digp.com" matTooltip="admin@digp.com">
+          <p>Email: admin@digp.com</p>
+        </a>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="reset" mat-raised-button color="primary" (click)="submit(frm.value)">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

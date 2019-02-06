@@ -9,6 +9,7 @@ import { PressComponent } from './components/public-pages/press/press.component'
 import { CurrentEventsComponent } from './components/public-pages/current-events/current-events.component';
 import { ImprintComponent } from './components/public-pages/imprint/imprint.component';
 import { AboutDeveloperComponent } from './components/public-pages/about-developer/about-developer.component';
+import { ContactUsComponent } from './components/public-pages/contact-us/contact-us.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'about-developer',
     component: AboutDeveloperComponent,
+  },
+  {
+    path: 'contact-us',
+    component: ContactUsComponent,
   },
   /*
   {

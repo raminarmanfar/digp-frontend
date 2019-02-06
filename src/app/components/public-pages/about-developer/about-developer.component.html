@@ -1,56 +1,24 @@
-<div class="content" fxLayout="column" fxFlex="600px" fxFlex.xs="100%" fxFlexFill>
-  <div>
-    <h3>Please fill in the following form to contact me</h3>
-  </div>
-  <div>
-    <form #frm="ngForm" (ngSubmit)="submit(frm.value)">
-      <mat-form-field>
-        <input type="text" matInput placeholder="First Name" ngModel name="firstName" required #firstName="ngModel">
-        <mat-error *ngIf="firstName.hasError('required')">
-          First name is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="input">
-        <input type="text" matInput placeholder="Last Name" ngModel name="lastName" required #lastName="ngModel">
-        <mat-error *ngIf="lastName.hasError('required')">
-          Last name is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="input">
-        <input matInput placeholder="Email" ngModel name="email" required #email="ngModel">
-        <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
-          Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="email.hasError('required')">
-          Email is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="input">
-        <textarea matInput placeholder="Subject" ngModel name="subject" required #subject="ngModel"></textarea>
-        <mat-error *ngIf="subject.hasError('required')">
-          Subject is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-      <button type="reset" mat-raised-button color="primary" (click)="submit(frm.value)">Submit</button>
-    </form>
-  </div>
-  <mat-divider style="margin-top: 20px;"></mat-divider>
-  <div>
-    <h3>Other ways that you can contact me</h3>
-  </div>
-  <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="10px" fxFlex="100%">
-    <div *ngFor="let item of icons" class="other-ways-tile">
-      <a target="blank" href="{{ item.url }}" matTooltip="{{ item.tooltip }}" matTooltipPosition="above" class="contact-items hvr-float-shadow">
-        <img class="icons" src="assets/images/developer/ {{ item.image }}" alt="{{ item.image }}">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Ramin Armanfar</mat-card-title>
+    <mat-card-subtitle>Senior full-stack software developer</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/images/developer/ramin4.jpg" alt="Ramin">
+  <mat-card-content>
+    <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="10px" fxFlex="100%">
+      <div *ngFor="let item of icons" class="other-ways-tile">
+        <a target="blank" href="{{ item.url }}" matTooltip="{{ item.tooltip }}" matTooltipPosition="above" class="contact-items hvr-float-shadow">
+          <img class="icons" src="assets/images/developer/{{ item.image }}" alt="{{ item.image }}">
+        </a>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="contact-items">
+      <a href="mailto:ramin.armanfar@gmail.com" matTooltip="ramin.armanfar@gmail.com">
+        <p>Email: ramin.armanfar@gmail.com</p>
       </a>
     </div>
-  </div>
-  <div class="contact-items">
-    <a href="mailto:ramin.armanfar@gmail.com" matTooltip="ramin.armanfar@gmail.com">
-      <p>Email: ramin.armanfar@gmail.com</p>
-    </a>
-  </div>
-</div>
+  </mat-card-actions>
+</mat-card>

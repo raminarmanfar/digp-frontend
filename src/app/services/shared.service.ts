@@ -47,6 +47,7 @@ export class SharedService {
       new MenuItem('Current Events', '/current-events', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Current events'),
       new MenuItem('Imprint', '/imprint', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Imprint'),
       new MenuItem('About Developer', '/about-developer', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'About developer'),
+      new MenuItem('Contact Us', '/contact-us', new Array<UserRoleEnum>(UserRoleEnum.Public, UserRoleEnum.User, UserRoleEnum.Admin), 'Contact us'),
     );
 
     SharedService.subToolBarInfo = new Array<SubToolbarItem>(
@@ -58,6 +59,7 @@ export class SharedService {
       new SubToolbarItem('/current-events', 'Current Events', 'List of oncomming and current events.'),
       new SubToolbarItem('/imprint', 'Imprint', 'The Imprint.'),
       new SubToolbarItem('/about-developer', 'About Developer', 'Contact developer.'),
+      new SubToolbarItem('/contact-us', 'Contact Us', 'Contact us.'),
 
       /*
       new SubToolbarItem('/dashboard', 'Dashboard', 'Your personal dashboard'),

@@ -19,3 +19,22 @@ mat-form-field {
 .other-ways-tile {
     margin: 0 auto;
 }
+
+#developer-image-container {
+    max-width: 70%;
+    margin: 5px auto;
+}
+
+#developer-image {
+    max-width: 100%;
+}
+
+.example-card {
+    margin: 5px auto;
+    max-width: 450px;
+  }
+  
+  .example-header-image {
+    background-image: url('/assets/images/developer/ramin7.jpg');
+    background-size: cover;
+  }
